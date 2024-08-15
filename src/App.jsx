@@ -1,8 +1,11 @@
 // src/App.jsx
 
 import { useState } from "react";
+import './App.css'
+import FighterTeam from './components/FighterTeam.jsx';
 
 const App = () => {
+
 
   const [team, setTeam] = useState([]);
   const [money, setMoney] = useState(100);
@@ -79,8 +82,62 @@ const App = () => {
     },
   ]);
 
+  const [totalStrength, setTotalStrength] = useState(0);
+  const [totalAgility, setTotalAgility] = useState(0);
+
+  const handleAddFighter = (fighter) => {
+    console.log(fighter)
+    if (money < fighter.price) {
+      console.log('Not enough money.')
+    } else {
+      const newTeamArray = [...team, fighter]
+      setTeam(newTeamArray)
+      setMoney(money - fighter.price)
+      setTotalStrength(totalStrength + fighter.strength)
+      setTotalAgility(totalAgility + fighter.agility)
+    }
+  }
+
+  const handleRemoveFighter = (fighter) => {
+    let newTeamArray = [team.filter(f => f !== fighter)]
+    setTeam(newTeamArray)
+    setMoney(money + fighter.price)
+    setTotalStrength(totalStrength - fighter.strength)
+    setTotalAgility(totalAgility - fighter.agility)
+
+  }
+
   return (
-    <h1>Hello world!</h1>
+    <>
+      <h1>Zombie Fighters</h1>
+      <h2>Money: {money}</h2>
+
+      <h2>Team Strength: {totalStrength}</h2>
+      <h2>Team Agility: {totalAgility}</h2>
+
+      <h2>Team: </h2>
+      {team.length === 0 ? <p>Pick some team members!</p> : <FighterTeam team={team} 
+      handleRemoveFighter={handleRemoveFighter}/>}
+
+      <h2>Fighters</h2>
+
+      <div className="fighter-list">
+        {zombieFighters.map((fighter, index) => (
+          <div className="fighter-stats" key={index}>
+            <ul>
+              <li><img src={fighter.img}></img></li>
+              <li>{fighter.name}</li>
+              <li>Price: {fighter.price}</li>
+              <li>Strength: {fighter.strength}</li>
+              <li>Agility: {fighter.agility}</li>
+            </ul>
+            <button onClick={() => {
+              handleAddFighter(fighter)
+            }}>Add</button>
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
