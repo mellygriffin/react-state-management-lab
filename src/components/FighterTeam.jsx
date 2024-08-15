@@ -12,7 +12,7 @@ const FighterTeam = ({ team, handleRemoveFighter }) => {
                         <li>Price: {fighter.price}</li>
                         <li>Strength: {fighter.strength}</li>
                         <li>Agility: {fighter.agility}</li>
-                        <button onClick={() => {
+                        <button class="clickables" onClick={() => {
                             handleRemoveFighter(fighter)
                         }}>Remove</button>
                     </ul>

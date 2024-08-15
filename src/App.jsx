@@ -15,7 +15,7 @@ const App = () => {
       price: 12,
       strength: 6,
       agility: 4,
-      img: 'https://via.placeholder.com/150/92c952',
+      img: 'https://via.placeholder.com/150/334516',
     },
     {
       name: 'Scavenger',
@@ -130,7 +130,7 @@ const App = () => {
               <li>Strength: {fighter.strength}</li>
               <li>Agility: {fighter.agility}</li>
             </ul>
-            <button onClick={() => {
+            <button class="clickables" onClick={() => {
               handleAddFighter(fighter)
             }}>Add</button>
           </div>
