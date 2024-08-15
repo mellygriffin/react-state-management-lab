@@ -125,7 +125,7 @@ const App = () => {
           <div className="fighter-stats" key={index}>
             <ul>
               <li><img src={fighter.img}></img></li>
-              <li>{fighter.name}</li>
+              <li><h4>{fighter.name}</h4></li>
               <li>Price: {fighter.price}</li>
               <li>Strength: {fighter.strength}</li>
               <li>Agility: {fighter.agility}</li>

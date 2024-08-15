@@ -8,6 +8,7 @@ const FighterTeam = ({ team, handleRemoveFighter }) => {
                     <ul>
                         <li><img src={fighter.img}></img></li>
                         <li>{fighter.name}</li>
+                        <p></p>
                         <li>Price: {fighter.price}</li>
                         <li>Strength: {fighter.strength}</li>
                         <li>Agility: {fighter.agility}</li>

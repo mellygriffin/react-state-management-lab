@@ -1,9 +1,43 @@
+* {
+  background-color: rgb(31, 29, 29);
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+body {
+  color: white;
+}
+
+.fighter-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 ul {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
 li {
   list-style: none;
   margin: 10px;
+}
+
+button {
+  background-color: #0a1410; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
