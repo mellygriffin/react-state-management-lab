@@ -99,12 +99,11 @@ const App = () => {
   }
 
   const handleRemoveFighter = (fighter) => {
-    let newTeamArray = [team.filter(f => f !== fighter)]
+    let newTeamArray = team.filter(f => f !== fighter)
     setTeam(newTeamArray)
     setMoney(money + fighter.price)
     setTotalStrength(totalStrength - fighter.strength)
     setTotalAgility(totalAgility - fighter.agility)
-
   }
 
   return (
